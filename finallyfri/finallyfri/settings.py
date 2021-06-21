@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'home',
+    'admin_user',
 ]
 
 MIDDLEWARE = [

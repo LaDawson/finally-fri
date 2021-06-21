@@ -44,6 +44,10 @@ body {
     margin-right: 10px;
     border-radius: 50%;
 }
+
+.navbar {
+    box-shadow: 0 2px 10px black;
+}
 /* -------------- Index.html -------------- */
 
 .learn-more-button {
