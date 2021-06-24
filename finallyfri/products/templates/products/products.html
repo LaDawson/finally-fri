@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container"></div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row cards-container">
+                    {% for product in products %}
+                    <!-- Card from Bootstrap -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Category: {{ product.category }}</h6>
+                            {% if product.image %}
+                                <hr class="product-card-hr">
+                                <img class="product-card-img" src="{{ product.image }}" alt="Image of: {{ product.name }}"/>
+                                <hr class="product-card-hr">
+                            {% endif %}
+                            <p class="card-text">{{ product.description }}</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

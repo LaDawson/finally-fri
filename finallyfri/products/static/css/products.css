@@ -1,0 +1,13 @@
+/* Pushing container below navbar */
+.product-container {
+    top: 56px;
+}
+
+.cards-container {
+    padding-top: 100px;
+}
+
+.product-card-img {
+    height: 100px;
+    width: 100px;
+}

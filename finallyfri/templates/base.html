@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
       
     <!-- Favicon -->
 
-    <link rel="shortcut icon" type="image/png" href="static/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
     <!-- Required meta tags -->
 
@@ -17,7 +18,7 @@
 
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link type="text/css" rel="stylesheet" href="static/css/base.css">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -45,7 +46,7 @@
                     <!-- Navbar from Bootstrap -->
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                             <a class="main-logo" href=""></a>
-                            <a class="navbar-brand logo-font" href=""> Finally Fri</a>
+                            <a class="navbar-brand logo-font" href="{% url 'home' %}"> Finally Fri</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -53,7 +54,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{% url 'products' %}">Products <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
