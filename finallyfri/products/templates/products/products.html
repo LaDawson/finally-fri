@@ -5,18 +5,22 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container"></div>
 {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
+        <div class="row product-container" data-masonry='{"percentPosition": true }'>
             <div class="product-container col-10 offset-1">
-                <div class="row cards-container">
+                <div class="row">
                     {% for product in products %}
                     <!-- Card from Bootstrap -->
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <div class="card-body">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Category: {{ product.category }}</h6>
